@@ -22,7 +22,7 @@ This is an example of how to list things you need to use the software and how to
 ### Installation
 1. Clone the repository
    ```sh
-   git clone https://github.com/reb-gaia/academia-frontend-lifecycle
+   git clone https://github.com/reb-gaia/academia-frontend-login
    ```
 2. Install NPM packages
    ```sh
