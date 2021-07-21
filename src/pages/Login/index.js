@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import Container from '../../components/Container';
 import { useFormik } from 'formik';
+import { useAuth } from '../../hooks/contexts/AuthProvider';
+import { useHistory } from 'react-router-dom';
+import { Styled } from './styles';
 
 function Login() {
+  const { SignIn, error } = useAuth();
+  const history = useHistory();
+
   const formik = useFormik({
     initialValues: {
       login: "",
       password: "",
     },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async values => {
+      // alert(JSON.stringify(values, null, 2));
+      await SignIn(values);
+      history.push("/home");
     }
   });
+
+  const AppError = useMemo(
+    () => <Styled.Error>{error}</Styled.Error>, [error]
+  )
 
   return <div>
     <Container
@@ -39,6 +51,7 @@ function Login() {
             onChange={formik.handleChange}
           />
         </Form.Group>
+        {AppError}
         <Button variant="primary" type="submit">
         Entrar
         </Button>

@@ -1,25 +1,25 @@
 // local que determina as rotas
-import React from 'react';
+import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Login from '../pages/Login';
-import Home from '../pages/Home';
-import NotFound from '../pages/NotFound';
+import Login from "../pages/Login";
+import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
+import NavBar from "../components/NavBar";
 import { Styled } from './styles';
-import NavBar from '../components/NavBar';
+import { useAuth } from '../hooks/contexts/AuthProvider';
 
-function Routes() {
+export default function Routes() {
+  const { auth } = useAuth();
   return (
     <Styled.AppLayout>
-      <NavBar />
+      {auth && <NavBar />}
       <Styled.PageLayout>
         <Switch>
           <Route path="/" exact component={Login} />
-          <Route path="/home" component={Home} />
-          <Redirect from="*" to={NotFound} /> {/* Se não for nenhuma acima, redireciona para a NotFound */}
+          {auth && <Route path="/home" component={Home} />}
+          <Redirect from="*" to={NotFound} />
         </Switch>
       </Styled.PageLayout>
     </Styled.AppLayout>
-  );
+  )
 }
-
-export default Routes;

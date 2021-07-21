@@ -4,12 +4,10 @@ import GlobalStyle from './styles/global'
 
 function App() {
   return (
-    <div>
-      <BrowserRouter> {/* Gerenciar os contextos */}
-        <Routes />
-        <GlobalStyle />
-      </BrowserRouter>
-    </div>  
+    <BrowserRouter> {/* Gerenciar os contextos */}
+      <Routes />
+      <GlobalStyle />
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "login": "teste",
+      "password": "teste",
+      "name": "teste",
+      "access_token": "liberado"
+    }
+  ],
+  "products": []
+}
