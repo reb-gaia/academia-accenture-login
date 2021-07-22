@@ -2,10 +2,23 @@
   "users": [
     {
       "login": "teste",
-      "password": "teste",
+      "password": "admin729",
       "name": "teste",
       "access_token": "liberado"
     }
   ],
-  "products": []
+  "products": [
+    {
+      "name": "Cavalo de madeira",
+      "description": "Ele é um cavalo de madeira",
+      "price": 50,
+      "id": 1
+    },
+    {
+      "name": "João bobo",
+      "description": "Um brinquedo que não cai",
+      "price": 20,
+      "id": 2
+    }
+  ]
 }

@@ -4,8 +4,7 @@
 // api
 // error -> erros
 
-import React from 'react';
-import { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 import { api } from "../../../services/api";
 
 const AuthContext = createContext({});
@@ -20,6 +19,7 @@ function AuthProvider({children}) {
     return "";
   });
 
+  // useCallback -> melhora a performance das funções
   const SignIn = useCallback(
     async ({login, password}) => {
       setError("");

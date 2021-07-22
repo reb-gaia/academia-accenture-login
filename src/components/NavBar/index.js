@@ -14,7 +14,7 @@ function NavBar() {
       icon: <FiHome />
     },
     {
-      link: '/create-products',
+      link: '/create-product',
       icon: <FiBriefcase />
     }
   ]

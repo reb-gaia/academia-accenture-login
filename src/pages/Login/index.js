@@ -53,11 +53,11 @@ function Login() {
         </Form.Group>
         {AppError}
         <Button variant="primary" type="submit">
-        Entrar
+          Entrar
         </Button>
       </Form> 
     </Container>
-  )
+  );
 }
 
 export default Login;

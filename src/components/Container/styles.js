@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import { mixins } from '../../styles/mixins';
 
-const ContainerSM =  styled.div`
+const ContainerSM = styled.div`
   margin: 80px 0;
   width: 700px;
   height: 100%;
@@ -18,10 +18,12 @@ const ContainerSM =  styled.div`
 
 export const Styled = {
   ContainerSM,
-  ContainerLG: styled(ContainerSM)` /* extende informações de SM */
+  ContainerLG: styled(ContainerSM)` /* estende informações de SM */
     margin: 5% 0;
     width: 90%;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     padding: none;
   `,
   Title: styled.h1`

@@ -1,6 +1,7 @@
 // local que determina as rotas
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom';
+import CreateProduct from "../pages/CreateProduct";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
@@ -17,6 +18,7 @@ export default function Routes() {
         <Switch>
           <Route path="/" exact component={Login} />
           {auth && <Route path="/home" component={Home} />}
+          {auth && <Route path="/create-product" component={CreateProduct} />}
           <Redirect from="*" to={NotFound} />
         </Switch>
       </Styled.PageLayout>
