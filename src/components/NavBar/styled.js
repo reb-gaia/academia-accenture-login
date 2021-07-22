@@ -9,11 +9,10 @@ export const Styled = {
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: start;
     flex-direction: column;
     width: 100px;
     height: 100%;
-    padding: 10px;
+    padding: 0px 10px;
     background-color: ${mixins.colors.primary}
   `,
   NavArea: styled.div`
@@ -24,7 +23,7 @@ export const Styled = {
     justify-content: space-around;
   `,
   NavItem: styled(Link)`
-    background-color: none;
+    background: none;
     border: none;
     outline: none;
     display: flex;
@@ -36,7 +35,7 @@ export const Styled = {
     z-index: 1;
   `,
   NavButton: styled.button`
-  background-color: none;
+    background: none;
     border: none;
     outline: none;
     display: flex;

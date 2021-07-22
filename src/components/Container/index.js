@@ -4,23 +4,23 @@ import { Styled } from './styles';
 function Container({ children, title, size }) {
   switch(size) {
     case "lg":
-      return <div>
+      return (
         <Styled.ContainerLG>
           <Styled.Title>
             {title}
           </Styled.Title>
           {children}
         </Styled.ContainerLG>
-      </div>
+      );
     case "sm":
-      return <div>
+      return (
         <Styled.ContainerSM>
           <Styled.Title>
             {title}
           </Styled.Title>
           {children}
         </Styled.ContainerSM>
-      </div>
+      );
     default:
       break;
   }

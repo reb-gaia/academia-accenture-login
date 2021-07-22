@@ -28,7 +28,7 @@ export const Styled = {
     margin: 50px 0;
     align-self: center;
     color: ${mixins.colors.primary};
-    font: ${mixins.fonts.bold};
-    size: ${mixins.typograph.title};
+    font-family: ${mixins.fonts.bold};
+    font-size: ${mixins.typograph.title};
   `
 }

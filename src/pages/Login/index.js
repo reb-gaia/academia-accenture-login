@@ -26,7 +26,7 @@ function Login() {
     () => <Styled.Error>{error}</Styled.Error>, [error]
   )
 
-  return <div>
+  return (
     <Container
       title="Login"
       size="sm"
@@ -57,7 +57,7 @@ function Login() {
         </Button>
       </Form> 
     </Container>
-  </div>
+  )
 }
 
 export default Login;

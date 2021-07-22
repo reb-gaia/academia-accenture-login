@@ -1,4 +1,3 @@
-// classes globais 
 import { mixins } from './mixins';
 import { createGlobalStyle } from 'styled-components';
 

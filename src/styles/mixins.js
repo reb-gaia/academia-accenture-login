@@ -1,4 +1,3 @@
-// padrões de cores, tamanhos, fontes, tamanho de fontes
 
 export const mixins = {
   colors: {
@@ -10,18 +9,18 @@ export const mixins = {
     red: "red",
   },
   fonts: {
-    bold: "Montserrat-Bold",
-    semibold: "Montserrat-SemiBold",
-    normal: "Montserrat-Normal",
+      bold: "Montserrat-Bold",
+      semi_bold: "Montserrat-SemiBold",
+      normal: "Montserrat-Normal"
   },
   typograph: {
-    title: "24px",
-    subTitle: "16px",
-    paragraph: "12px",
+      title: "24px",
+      subtitle: "16px",
+      paragraph: "12px"
   },
-  size: {
-    lg: "240px",
-    md: "160px",
-    sm: "120px",
-  },
+  sizes: {
+      lg: "240px",
+      md: "160px",
+      sm: "120px"
+  }
 }
