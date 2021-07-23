@@ -9,16 +9,22 @@
   ],
   "products": [
     {
-      "name": "Cavalo de madeira",
-      "description": "Ele é um cavalo de madeira",
-      "price": 50,
+      "name": "Carro 1",
+      "description": "Fiat 500 prata",
+      "price": 1000,
       "id": 1
     },
     {
-      "name": "João bobo",
-      "description": "Um brinquedo que não cai",
-      "price": 20,
+      "name": "Carro 2",
+      "description": "Chevrolet Onix preto",
+      "price": 500,
       "id": 2
+    },
+    {
+      "name": "Carro 3",
+      "description": "Jeep Renegade Branco",
+      "price": 900,
+      "id": 3
     }
   ]
 }

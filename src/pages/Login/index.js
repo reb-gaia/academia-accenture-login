@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import { useAuth } from '../../hooks/contexts/AuthProvider';
 import { useHistory } from 'react-router-dom';
 import { Styled } from './styles';
+import { validationSchema } from './validation'
 
 function Login() {
   const { SignIn, error } = useAuth();
@@ -15,8 +16,8 @@ function Login() {
       login: "",
       password: "",
     },
+    validationSchema,
     onSubmit: async values => {
-      // alert(JSON.stringify(values, null, 2));
       await SignIn(values);
       history.push("/home");
     }
@@ -24,7 +25,14 @@ function Login() {
 
   const AppError = useMemo(
     () => <Styled.Error>{error}</Styled.Error>, [error]
-  )
+  );
+
+  const ValidationLoginError = useMemo(
+    () => <Styled.Error>{formik.errors.login}</Styled.Error>, [formik.errors.login]
+  );
+  const ValidationPasswordError = useMemo(
+    () => <Styled.Error>{formik.errors.password}</Styled.Error>, [formik.errors.password]
+  );
 
   return (
     <Container
@@ -39,7 +47,10 @@ function Login() {
             name="login"
             placeholder="Coloque aqui o seu melhor login"
             onChange={formik.handleChange}
+            isValid={formik.touched.login && !formik.errors.login}
+            isInvalid={formik.errors.login}
           />
+          {ValidationLoginError}
         </Form.Group>
         <Form.Group className="mb-5">
           <Form.Label>Senha</Form.Label>
@@ -49,9 +60,12 @@ function Login() {
             type="password"
             placeholder="Sua senha"
             onChange={formik.handleChange}
+            isValid={formik.touched.password && !formik.errors.password}
+            isInvalid={formik.errors.password}
           />
+          {ValidationPasswordError}
         </Form.Group>
-        {AppError}
+        {AppError}    
         <Button variant="primary" type="submit">
           Entrar
         </Button>

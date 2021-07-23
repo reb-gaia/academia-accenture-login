@@ -37,11 +37,11 @@ function ProductProvider({children}) {
   const putProduct = useCallback(
     async ({id, name, description, price}) => {
       try {
-        await api.put(`/products/${id}`,
+        await api.put(`/products/${id}`, {
           name, 
           description, 
           price,
-        );
+        });
       } catch (error) {
         setError("Erro ao editar o produto");
       }
@@ -51,6 +51,9 @@ function ProductProvider({children}) {
     async ({id}) => {
       try {
         await api.delete(`/products/${id}`);
+        setProducts(pState => pState.filter(
+          state => state.id !== id
+        ));
       } catch (error) {
         setError("Erro ao deletar o produto");
       }
